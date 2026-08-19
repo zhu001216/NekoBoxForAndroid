@@ -242,6 +242,9 @@ fun buildConfig(
             auto_detect_interface = true
             rules = mutableListOf()
             rule_set = mutableListOf()
+            if (!forTest && DataStore.routeBypassUnmatched) {
+                final_ = TAG_BYPASS
+            }
         }
 
         // returns outbound tag
@@ -673,7 +676,7 @@ fun buildConfig(
             })
         }
 
-        dns.final_ = if (forTest) "dns-direct" else "dns-remote"
+        dns.final_ = if (forTest || DataStore.routeBypassUnmatched) "dns-direct" else "dns-remote"
 
         // dns object user rules
         if (enableDnsRouting) {
