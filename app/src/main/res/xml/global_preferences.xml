@@ -109,6 +109,10 @@
         <SwitchPreference
             app:key="bypassLanInCore"
             app:title="@string/bypass_lan_in_core" />
+        <SwitchPreference
+            app:key="routeBypassUnmatched"
+            app:summary="@string/route_bypass_unmatched_sum"
+            app:title="@string/route_bypass_unmatched" />
         <moe.matsuri.nb4a.ui.SimpleMenuPreference
             app:defaultValue="1"
             app:entries="@array/traffic_sniffing_values"
